@@ -1,0 +1,376 @@
+---
+#title: "Stability of and predictive utility of microbiome disruption indices for ventilator-associated lower respiratory tract infection"  
+#author: "Brendan J. Kelly, MD, MS"
+bibliography: bib/bibliography.bib
+csl: csl/cid.csl
+output: html_document
+css: style_helvetica_double.css
+---
+
+
+```{r setup, echo=FALSE, eval=TRUE, include=FALSE, autodep=TRUE}
+
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(tidyverse)
+source("./scripts/m2_load_libraries_and_data.R")
+
+```
+
+  
+```{r table_1, echo=FALSE, eval=TRUE, include=FALSE, autodep=TRUE}
+
+source("./scripts/m2_table1.R")
+
+
+```
+
+
+```{r mdi_description, eval=TRUE, autodep=TRUE, include=FALSE, fig.align='center'}
+
+#source("./scripts/m2_mdi_descriptive_statistics.R")
+
+```
+
+
+```{r mdi_ventdays, eval=TRUE, autodep=TRUE, include=FALSE, fig.align='center'}
+
+#source("./scripts/m2_mdi_vs_ventdays.R")
+
+```
+
+
+```{r mdi_outcomes, eval=TRUE, autodep=TRUE, include=FALSE, fig.align='center'}
+
+#source("./scripts/m2_outcome_definition_comparison.R")
+
+```
+
+
+```{r mdi_crosssection, eval=TRUE, autodep=TRUE, include=FALSE, fig.align='center'}
+
+#source("./scripts/m2_mdi_vap_mixed_cross-sectional_models.R")
+
+```
+
+
+```{r maxprop_asv, eval=TRUE, autodep=TRUE, include=FALSE, fig.align='center'}
+
+#source("./scripts/m2_mdi_vap_taxon_mixed_maxprop_predictive_models.R")
+
+```
+
+
+```{r mdi_duration, eval=TRUE, autodep=TRUE, include=FALSE, fig.align='center'}
+
+#source("./scripts/m2_mdi_vap_minimpute_mixed_persistence.R")
+#source("./scripts/m2_mdi_vap_noimpute_mixed_persistence.R")
+#source("./scripts/m2_mdi_vap_impute_mixed_persistence.R")
+
+```
+ 
+  
+```{r mdi_interaction, eval=TRUE, autodep=TRUE, include=FALSE, fig.align='center'}
+
+#source("./scripts/m2_mdi_interax_models.R")
+
+```
+
+  
+  
+## Title  
+Respiratory microbiome disruption and risk for ventilator-associated lower respiratory tract infection  
+  
+## Abbreviated Title  
+MDI Stability and Predictive Utility  
+  
+## Authors  
+James J. Harrigan, MD, PharmD (1); Hatem Abdallah (1); Erik L. Clarke, PhD (2); Arman Oganisian, MS (2); Jason A. Roy, PhD (4); Ebbing Lautenbach, MD, MPH, MS (1,2); Emily Reesey, MS (2); Magda Wernovsky (1); Pam Tolomeo, MPH (2); Zygmunt Morawski (5); Jerry Jacob, MD, MS (1,5); Michael A. Grippi, MD (3,5); Brendan J. Kelly, MD, MS (1,2)  
+  
+## Affiliations  
+1 - Division of Infectious Diseases, Department of Medicine;  
+2 - Department of Biostatistics, Epidemiology, and Informatics;  
+3 - Division of Pulmonary, Allergy, and Critical Care, Department of Medicine, Perelman School of Medicine, University of Pennsylvania, Philadelphia, PA;  
+4 - Department of Biostatistics and Epidemiology, Rutgers School of Public Health, Ruthers University, Piscataway, NJ;  
+5 - Good Shepherd Penn-Partners Specialty Hospital, Philadelphia, PA   
+  
+## Corresponding Author Contact  
+Brendan J. Kelly, MD, MS - brendank@pennmedicine.upenn.edu  
+  
+## Authors' Contributions   
+JJH - analysis, manuscript;  
+HA - analysis, manuscript;  
+ELC - analysis, manuscript;  
+AO - analysis, manuscript;  
+JAR - analysis, manuscript;  
+EL - study design, manuscript;  
+ER - specimen process, manuscript;   
+MW - study enrollment, specimen processing, data collection, manuscript;   
+PT - study enrollment, manuscript;  
+ZM - study enrollment, manuscript;  
+JJ - study enrollment, manuscript;  
+MAG - study enrollment, manuscript;  
+BJK - study design, data analysis, manuscript   
+  
+## Disclosures  
+The authors report no relevant disclosures.  
+  
+## Data Availability  
+Processed clinical and microbiome data, as well as analysis scripts and model code are available at github.com/bjklab. Raw 16S rRNA gene  sequence data have been made publicly available at the National Center for Biotechnology Information's Sequence Read Archive (NCBI SRA) with BioProject ID: PRJNA529220.  
+  
+## Keywords  
+microbiome, ventilator-associated pneumonia, mechanical ventilation, long-term acute care  
+  
+  
+### Acknowledgements:  
+This study was funded by Centers for Disease Control and Prevention (CDC) contract awards (BAA 200-2016-91964 and 200-2018-02919). BJK is supported by the National Institute for Allergy and Infectious Diseases (K23 AI121485 and L30 AI120149). This research was also supported by a CDC Cooperative Agreement FOA#CK16-004-Epicenters for the Prevention of Healthcare Associated Infections.    
+  
+  
+  
+-----
+\newpage
+<P style = "page-break-before: always">
+  
+## Manuscript  
+  
+### Abstract  
+  
+* __Background__: Ventilator-associated lower respiratory tract infection (VA-LRTI) is a common among critically ill patients and has been associated with increased morbidity and mortality. In acute critical illness, respiratory microbiome disruption indices (MDIs) have been shown to predict risk for VA-LRTI, but their utility beyond the first days of critical illness is unknown. We sought to characterize how MDIs previously shown to predict VA-LRTI at initiation of mechanical ventilation change with prolonged mechanical ventilation, and if they remain associated with VA-LRTI risk.    
+  
+* __Methods__: We developed a cohort of 83 subjects admitted to a long-term acute care hospital due to their prolonged dependence on mechanical ventilation; performed dense, longitudinal sampling of the lower respiratory tract, collecting 1066 specimens; and characterized the lower respiratory microbiome by 16S rRNA sequencing as well as total bacterial abundance by 16S rRNA qPCR.   
+  
+* __Results__: Cross-sectional MDIs, including low Shannon diversity and high total bacterial abundance, were associated with risk for VA-LRTI, but the associations had wide posterior credible intervals. Persistent lower respiratory microbiome disruption showed a more robust association with VA-LRTI risk, with each day of (base e) Shannon diversity < 2.0 associated with a VA-LRTI odds ratio of 1.36 (95% credible interval 1.10 to 1.72). The observed association was consistent across multiple clinical definitions of VA-LRTI.  
+  
+* __Conclusions__: Cross-sectional MDIs have limited ability to discriminate VA-LRTI risk during prolonged mechanical ventilation, but persistent lower respiratory tract microbiome disruption, best characterized by consecutive days with low Shannon diversity, may identify a population at high risk for infection and may help target infection prevention interventions.  
+  
+  
+-----  
+\newpage
+<P style = "page-break-before: always">
+  
+### Introduction:    
+Alterations in lower respiratory tract microbial community structure and membership have been found to be associated with risk for ventilator-associated lower respiratory tract infection (VA-LRTI) among critically ill subjects dependent on mechanical ventilation [@Kelly2016-zw; @Kitsios2018-xp; @Langelier2018-iz; @Dickson2020-ri]. 
+
+Approximately 15% (9-27%) of critically ill patients receive antibiotics for VA-LRTI. <span style="background-color:lightcyan;">VA-LRTI increases the duration of critical illness and mechanical ventilation. Some studies suggest that VA-LRTI patients have as much as two-fold increased mortality relative to patients dependent on mechanical ventilation who do not develop LRTI</span> [@Chastre2007-fo; @Klompas2007-hj; @Klompas2013-tj; @Rello1991-gp; @Vincent2009-vx]. Microbiome disruption indices (MDIs), which quantify the degree of perturbation in the respiratory microbial community, may permit early recognition, intervention, and prevention of VA-LRTI, thus alleviating associated morbidity and mortality [@Halpin2016-zs].   
+  
+To date, studies of respiratory microbiome disruption and VA-LRTI have focused on subjects with acute critical illness, and respiratory microbiome measures have typically been performed around the time of intubation and mechanical ventilation onset [@Langelier2018-iz; @Kitsios2020-ky]. The respiratory microbiome disruption observed during this period may reflect true ventilator-associated infection, or it may reflect incipient pneumonia that contributed to the incident respiratory failure and critical illness [@Chanderraj2018-ii; @Dickson2014-ao]. However, prolonged mechanical ventilation has itself been shown to be associated with respiratory microbiome disruption even in the absence of infection [@Kelly2016-zw], and the utility of microbiome disruption as a marker for infection risk later in critical illness remains poorly understood.  
+  
+We sought to define the stability and predictive utility of three MDIs during prolonged critical illness. We enrolled 83 subjects and collected 1066 longitudinal respiratory tract samples to understand how (1) bacterial community diversity, (2) dominance of the lower respiratory tract bacterial community by a single taxon, and (3) total bacterial abundance relate to risk for VA-LRTI. Below we report the results of our investigation.  
+  
+  
+-----  
+\newpage
+<P style = "page-break-before: always">
+  
+  
+### Materials and Methods:  
+  
+* __Study Design and Setting__: To understand how respiratory microbiome disruption impacts risk for VA-LRTI, we performed a prospective cohort study, enrolling subjects admitted to a long-term acute care hospital (LTACH) affiliated with the University of Pennsylvania, in Philadelphia, PA, USA. Initial endotracheal (ET) specimens were obtained at enrollment, and specimen collection was repeated at 24- to 72-hour intervals thereafter until mechanical ventilation was discontinued or 30 days elapsed. Informed consent was obtained from subjects or their surrogates. The protocols were reviewed and approved by the University of Pennsylvania IRB (protocol #826629).          
+  
+* __Study Population__: Subjects were eligible for inclusion with (1) age >= 18 years, (2) dependence on mechanical ventilation, and (3) admission to LTACH with goal of ventilator weaning. Tracheostomy had been performed on all subjects prior to LTACH admission. Duration of critical care and mechanical ventilation prior to LTACH admission varied across subjects.    
+  
+* __Clinical Data Collection__: Using the Penn Data Store, a repository of clinical data compiled from the electronic medical record, we measured subject demographics, including age, sex, race, and ethnicity; underlying medical diagnoses; antibiotic exposure prior to enrollment; and baseline laboratory values. Clinical respiratory culture data, antibiotic administration data, and vital sign data were captured for 30-days from subject enrollment.   
+  
+* __Specimen Collection, Data Collection, and Processing__: ET specimens were collected during routine daily suctioning of the subjects' tracheal tubes. During suctioning, 1-5mL of sterile saline were introduced as a sterile catheter was advanced into the mid-trachea and then suctioned back into a Lukens trap. ET specimens were stored immediately on ice and transferred to −80°C storage within 2 hours of collection. After DNA extraction (QIAGEN DNeasy Powersoil) and amplification of the V1-V2 16S ribosomal RNA (rRNA) gene hypervariable region (27F - 338R) as previously described [@Kelly2016-zw], we performed paired-end 250bp sequencing (Illumina HiSeq), sequence demultiplexing and alignment (QIIME2), sequence denoising and amplicon sequence-variant (ASV) binning (DADA2 with trimming to bases 13-200). ASVs were used to permit granular analysis and to improve compatibility across studies [@Bolyen2019-xk; @Callahan2016-uq]. Genus-level taxonomic assignments were performed by QIIME 2’s default classifier (Project SILVA_132_SSURef_Nr99 database) [@Munoz2011-bj; @Yarza2008-mk]. 16S rRNA gene quantitative PCR (qPCR) was performed using the same amplicon [@Lauder2016-bw]. <span style="background-color:lightcyan;">A total of 1066 respiratory tract specimens were collected from 83 subjects. An analysis of the intitial specimen from each subject was previously presented as an abstract[@Clarke2020-go], but the longitudinal data has not been previously presented.</span>    
+  
+* __Definition of Exposures__: At each timepoint, we measured bacterial community as the Shannon diversity (base e) of the bacterial community defined by 16S rRNA gene ASVs. We defined dominance of the lower respiratory tract bacterial community as the proportional abundance of the most abundant ASV; communities were considered dominated by a single taxon if maximum proportional abundance exceeded 50%. We defined the total bacterial abundance as the the 16S rRNA gene copy number per mL of endotracheal aspirate.  
+  
+* __Definition of Outcome__: A challenge to understanding the relationship between respiratory microbiome disruption and infection is the absence of a gold standard definition for infection [@Chanderraj2018-ii; @Dickson2018-lj]. We defined VA-LRTI by three criteria: (1) the order of a clinical respiratory culture to indicate suspicion for respiratory infection, (2) identification and reporting of a bacterial growth from culture by the clinical microbiology lab, and (3) vital or laboratory signs of infection (white blood cell (WBC) count outside normal range, or fever). As a sensitivity analysis, we also evaluated alternate definitions of VA-LRTI: (a) VA-LRTI defined by ordering a respiratory culture alone, or (b) respiratory culture order and bacterial growth with concomitant signs of infection (as above) and initiation or alteration of antibiotic prescription within 48 hours of culture collection.  
+  
+* __Statistical Methods__: Data were organized using R statistical software version 4.0.3 [@R_Core_Team2018-xo], and plots generated using the “ggplot2” package [@Wickham2016-eh]. Potential confounders were compared between exposure groups using Wilcoxon rank-sum testing (continuous variables) and Fisher’s exact test (categorical variables). Bayesian mixed effects regression models were applied to understand the relationship between MDIs and VA-LRTI, incorporating random effects for subjects to account for the longitudinal nature of the data. For all analyses related to VA-LRTI, data were censored at the time of first VA-LRTI diagnosis. <span style="background-color:lightcyan;">No imputation was performed for cross-sectional analyses. For the analysis of microbiome disruption persistence, if microbiome specimens had not been obtained on the day of VA-LRTI, we imputed the MDI on that day as the last recorded value. `r paste0(round(((681 - 638) / 681)*100, 1), "%")` of values were imputed for this analysis. For comparison, we also analyzed models with no imputation and with all missing values imputed in the same manner.</span> Models were fit using Stan Hamiltonian Monte Carlo (HMC) version 2.25 via the "brms" package [@Burkner2017-yr; @Carpenter2017-ec; @McElreath2016-sf]. After prior predictive checks, models were fit with 4 chains of 1000 iterations, confirmed with HMC diagnostics (no divergent iterations, Rhat statistic < 1.1 for all parameters, and E-BFMI > 0.2), and by examining the posterior distributions [@Gabry2019-le; @Gelman2020-sd]. Point estimates of parameters (posterior median) are presented, with 95% posterior credible intervals (95%CI). <span style="background-color:lightcyan;">Models were evaluated using leave-one-out cross-validation and the widely applicable information criterion; model comparisons were made on the expected log predictive density (ELPD) for new data</span> [@Vehtari2017-zz].    
+  
+* __Power and Sample Size__: Based on the median duration of LTACH admission, the observed incidence of VA-LRTI at the study site, and our prior study of respiratory microbiome disruption among mechanically ventilated patients [@Kelly2016-zw], we estimated that 70 subjects would yield posterior precision to detect an MDI-associated odds ratio of 1.4 with type S error < 0.05 [@Gelman2000-ih; @Gelman2014-wn; @Rothman2018-jg]. We exceeded the target enrollment with 83 subjects.  
+  
+* __Availability of Data__: Sequence data is publicly available on the National Center for Biotechnology Information’s Sequence Read Archive (NCBI SRA) with BioProject ID PRJNA529220. Model code, as well as code used to produce the manuscript and figures, is available at github.com/bjklab.  
+    
+  
+-----  
+\newpage
+<P style = "page-break-before: always">
+  
+  
+### Results:  
+  
+* __Clinical characteristics are similar across subjects admitted to long-term acute care with higher or lower respiratory tract bacterial community diversity__: We enrolled 83 subjects and collected 1066 ET specimens, with 371 specimens collected in the first week after LTACH admission, 252 specimens collected (over 58 active subjects) in the second week after LTACH admission, and 443 specimens (over 58 active subjects) collected beyond the second week. <span style="background-color:lightcyan;">All subjects had a tracheostomy at the time of enrollment. The median (interquartile range (IQR)) duration of pre-admission mechanical ventilation was 38 (25 to 60) days</span>. We evaluated baseline demographic and clinical characteristics for the whole cohort, and we compared clinical characteristics at time of enrollment across groups divided by the primary exposure of interest in order to identify potential confounders (**Table 1**). We found that subjects admitted with high (above median) versus low (below median) respiratory tract bacterial community diversity had no significant differences in age, gender, leukocytosis (admission serum WBC count), kidney disease (admission serum creatinine), history of underlying lung disease, diabetes, congestive heart failure, or cirrhosis. We also found no significant differences in pre-enrollment (within 7-days prior to admission) antibiotic exposure between the groups. <span style="background-color:lightcyan;">The subjects' indications for critical care prior to LTACH admission are summarized in **Supplemental Table 1**. There were 16 (38%) subjects with pneumonia noted during prior critical care in the low admission respiratory bacterial community diversity group versus 10 (24%) in the high diversity group, but this difference was not statistically significant (p = 0.18). Likewise, no significant association was observed between duration of pre-admission mechanical ventilation and bacterial community diversity on admission.</span>  
+  
+* __Microbiome disruption indices are stable over the course of prolonged mechanical ventilation__: Previous studies suggested a trend towards reduced lower respiratory tract bacterial community diversity during the early period after the onset of mechanical ventilation [@Kelly2016-zw], so we examined the impact of days on mechanical ventilation on the three MDIs of interest. **Figure 1** depicts the median and IQR of lower respiratory tract Shannon diversity, maximum ASV proportional abundance (i.e., bacterial community dominance), and total bacterial abundance measured by 16S rRNA gene qPCR, at subject enrollment and during each subsequent week of follow-up. In aggregate across all subjects, all three MDIs appeared stable over the course of prolonged mechanical ventilation. We confirmed this finding by evaluating the relationships between duration of mechanical ventilation and each MDI, using a mixed effects regression model to account for inter-subject differences in MDI values at enrollment, and found negligible associations (for Shannon diversity 0.0082 (95%CI 0.00083 to 0.016); for maximum ASV abundance 0.001 (95%CI -0.00011 to 0.0028); for 16S rRNA qPCR 0.0011 (95%CI -0.00058 to 0.0079)).    
+  
+* __VA-LRTI occurs frequently during long-term acute care__: Given the lack of gold standard for VA-LRTI, we evaluated several VA-LRTI definitions. Across 83 subjects, 50 had clinical respiratory cultures ordered for suspected VA-LRTI, 46 had positive respiratory cultures and signs of infection (primary outcome definition), and 20 had positive respiratory cultures with signs of infection and new or altered antibiotic treatment within 48 hours of culture. By all definitions, VA-LRTI occurred frequently during long-term acute care. The mean (SD) time from study enrollment to VA-LRTI (primary outcome definition) was 9.9 (7.9) days. The most common bacterial pathogens identified by clinical respiratory cultures among subjects with VA-LRTI were _Pseudomonas_ (31 isolates) and _Staphylococcus aureus_ (9 isolates); _Neisseria_ species were also commonly isolated by respiratory culture (21 isolates), often accompanying other bacterial pathogens, but occasionally alone <span style="background-color:lightcyan;">(**Supplemental Table 2**). Of 46 positive respiratory cultures with concurrent signs of infection, only 9 had a dominant 16S rRNA ASV on the day of culture; 6 of the 9 matched the genus recovered from culture</span>.  
+  
+* __Cross-sectional MDIs correlate with risk for VA-LRTI but have limited predictive utility__: To understand the relationship between microbiome disruption and VA-LRTI risk, we performed mixed effect regression with subject-level intercepts for each of the three MDIs. As shown in **Figure 2** and consistent with prior studies, we found that VA-LRTI risk increases with lower Shannon diversity and with high total bacterial burden in the respiratory tract (log 16S rRNA gene copies). However, maximum ASV proportional abundance had no clear association with VA-LRTI, and at no threshold were any of the cross-sectional MDIs reliably associated with risk for VA-LRTI. A two standard-deviation increase in Shannon diversity was found to be associated with only a 0.5% decrease in absolute VA-LRTI probability; a two standard-deviation increase in maximum ASV proportional abundance was found to be associated with a negligible change in VA-LRTI probability (-0.06%, 95%CI -3.9% to 3.8%); and a two standard-deviation increase in total bacterial abundance was found to be associated with only a 0.8% increase in absolute VA-LRTI probability (95%CI -2.1% to 6.5%). We investigated whether maximum proportional ASV abundance performed better if restricted to certain ASVs and found that maximum proportional abundance of two ASVs (one assigned to _Staphylococcus aureus_, the other to _Pseudomonas_) did portend a higher risk of VA-LRTI, but the cross-sectional measure of their abundance still had limited predictive utility.   
+  
+* __Persistent low bacterial community diversity portends significant risk for VA-LRTI__: Though the predictive utility of cross-sectional MDIs was poor, we found that persistent microbiome disruption more reliably discriminated risk for VA-LRTI. **Figure 3** shows the odds ratios of VA-LRTI associated with each 1-day increase of persistent microbiome disruption, with microbiome disruption defined as low (below median) Shannon diversity, high (above 50%) maximum ASV proportional abundance, or high (above median) total bacterial abundance. <span style="background-color:lightcyan;">Persistently low Shannon diversity had the strongest association with VA-LRTI risk (odds ratio 1.36, 95%CI 1.10 to 1.72). High maximum ASV proportional abundance (odds ratio 1.21, 95%CI 1.02 to 1.45) and total bacterial abundance (odds ratio 1.13, 95%CI 0.925 to 1.36) were also associated with increased risk for VA-LRTI, but with less posterior certainty. We corroborated these findings by performing sensitivity analysis using two different VA-LRTI definitions, and found consistent effects with persistently low Shannon diversity demonstrating the strongest association with VA-LRTI risk (**Supplemental Figure 1**). We further corroberated these findings by repeating models with different imputation strategies for MDIs on days when no microbiome sampling could be performed. We found consistent effects whether no imputation, minimal imputation, or full imputation was performed, with odds ratios of VA-LRTI per additional day of persistent low Shannon diversity of 1.20, 1.36, and 1.14, respectively.</span>    
+   
+* <span style="background-color:lightcyan;"> __Persistent low bacterial community diversity better predicts VA-LRTI than models incorporating multiple cross-sectional MDIs__: We evaluated how respiratory bacterial community diversity and dominance relate to total bacterial abundance, as well as whether multi-MDI models improve predictive performance for VA-LRTI. The correlation between total bacterial abundance and markers of bacterial community disruption was minimal: only 0.0191 (95%CI −0.0617 to 0.0989) for Shannon diversity, and only 0.0358 (95%CI −0.0438 to 0.117) for maximum ASV proportional abundance. (As expected, Shannon diversity and maximum ASV proportional abundance were negatively correlated: −0.483 (95%CI −0.539 to −0.422)). We investigated whether incorporating both total bacterial abundance and Shannon diversity in a single predictive model could improved performance over single cross-sectional MDIs. However, the multivariable, cross-sectional MDI model did not ipmrove expected out-of-sample predictive performance estimated by ELPD, relative to the single-MDI models. A simple longitudinal model that incorporated the persistence of low Shannon diversity, as described above, outperformed all univariable and multivariable cross-sectional models.</span>  
+  
+  
+-----  
+\newpage
+<P style = "page-break-before: always">
+  
+  
+### Discussion:  
+  
+We enrolled a cohort of subjects with prolonged dependence on mechanical ventilation at the time of their LTACH admission in order to understand how MDIs previously shown to predict VA-LRTI at initiation of mechanical ventilation change with prolonged mechanical ventilation, and how strongly they remain associated with VA-LRTI risk. Consistent with preliminary studies [@Kelly2016-zw], we found that lower respiratory tract bacterial community diversity is reduced among subjects requiring prolonged mechanical ventilation relative to newly intubated patients [@Kitsios2020-ky; @Langelier2018-iz; @Dickson2020-ri], but median diversity remained stable over the course of long-term care. In this cohort, cross-sectional MDIs were only weakly associated with risk for VA-LRTI. Lower Shannon diversity and high total bacterial burden in the respiratory tract (log 16S rRNA gene copies) were both associated with increased risk for VA-LRTI, but the 95% posterior credible intervals of their associations included a null effect. <span style="background-color:lightcyan;">Even models incorporating multiple cross-sectional MDIs showed poor predictive performance for VA-LRTI.</span> It was only persistent disruption of the lower respiratory tract bacterial community that more reliably discriminated risk for VA-LRTI, and low bacterial community diversity (base e Shannon index < 2.0) performed best among the MDIs with VA-LRTI odds ratio odds ratio 1.36 (95%CI 1.10 to 1.72) per day of persistent microbiome disruption. The association between low Shannon diversity and VA-LRTI risk was consistent across multiple definitions of VA-LRTI.  
+  
+The finding that persistent lower respiratory tract microbiome disruption is significantly associated with VA-LRTI risk, even in an LTACH population with reduced baseline diversity, is significant for several reasons. First, our findings suggest that respiratory tract microbiome disruption may be a valuable biomarker, not only in acute critical illness [@Kitsios2020-ky; @Langelier2018-iz; @Dickson2020-ri], but also during prolonged critical illness and long-term mechanical ventilation. Second, our findings suggest that factors contributing to low respiratory tract diversity, including antibiotic exposure and pulmonary toilet practices, may contribute to the mechanism by which VA-LRTI occurs. These findings may inform and help target infection control and antibiotic stewardship practices for mechanically-ventilated patients as metagenomic profiling of the respiratory microbiome enters the clinical laboratory [@Chiu2019-cv]. Third, the better discrimination of VA-LRTI risk observed with Shannon diversity, compared to maximum ASV proportional abundance (i.e., bacterial community dominance) and total bacterial abundance (copies of 16S rRNA per mL of sputum), may guide the implementation of future MDI-surveillance interventions [@Halpin2016-zs].  
+  
+Several weaknesses of our study must be noted. First, there is no gold standard for VA-LRTI, and we relied upon clinical features to define VA-LRTI in our cohort, scrutinizing our findings with a sensitivity analysis that compared alternative VA-LRTI definitions. <span style="background-color:lightcyan;">We could not include chest radiography as a clinical feature defining VA-LRTI because few radiographs were performed in our cohort.</span> Second, our cohort was recruited from a single LTACH site, though at the time of enrollment patients had been received in transfer from multiple referring hospitals. These weaknesses may limit the external validity of our findings. Third, we evaluated MDIs with univariable regression because we were motivated to evaluate their utility as biomarkers for infection risk, <span style="background-color:lightcyan;">and we performed only a limited analysis of multivariable models. Other model structures (e.g., tree models) that incorporate multiple MDIs may improve predictive utility. Our key finding -- that persistent respiratory tract bacterial community disruption is more informative than cross-sectional MDIs -- is based on a simple model structure, with room for further improvement. Our models of persistent microbiome disruption used the number of consecutive days of disruption to predict VA-LRTI, relying on simple, dichotomized definitions of disruption in order to classify each day. Better methods are needed to quantify the degree of microbiome disruption over time.</span>  
+  
+We have demonstrated that persistent lower respiratory tract bacterial community disruption is associated with increased risk for VA-LRTI, even after prolonged critical illness and mechanical ventilation, and even among subjects with much lower baseline bacterial community diversity than observed during acute critical illness. The persistence of low Shannon diversity best discriminated risk for VA-LRTI in our cohort. Future studies must elucidate healthcare practices that drive persistent lower respiratory microbiome disruption and interventions that can correct it or mitigate its impact. <span style="background-color:lightcyan;">If we are to realize the potential for MDIs to improve clinical care, future studies must also focus on how informative features of the respiratory microbiome can be measured rapidly and continually during critical illness.</span>     
+  
+  
+  
+-----
+\newpage
+<P style = "page-break-before: always">
+  
+  
+### Tables:  
+  
+#### Table 1:  
+  
+```{r table1_shannon, eval=TRUE, autodep=TRUE, fig.align='center'}
+
+t1_shannon
+
+```
+  
+__Table 1: Subject characteristics.__ Subject demographics, laboratory values at day of enrollment, medical comorbidities, and recent (within 7 days) pre-enrollment antibiotic exposures are presented. For categorical variables, counts and proportions are given; for continuous variables, medians and interquartile ranges are given. Subjects are described in aggregate and grouped by above or below median lower respiratory tract Shannon diversity at the time of enrollment. To identify variables associated with initial lower respiratory tract Shannon diversity, categorical values are compared with Fisher’s exact test, and continuous variables are compared with Wilcoxon rank-sum tests. <span style="background-color:lightcyan;">(COPD: chronic obstructive pulmonary disease; ILD: interstitial lung disease; DM: diabetes mellitus; CHF: congestive heart failure; WBC: white blood cell count; Cr: serum creatinine; AST: aspartate aminotransferase; ALT: alanine aminotransferase; FIO2: fraction of inspired oxygen; PEEP: positive end-expiratory pressure; IV: intravenous). </span>  
+  
+  
+  
+-----  
+\newpage
+<P style = "page-break-before: always">
+  
+### Figures:  
+  
+#### Figure 1:  
+  
+  
+```{r fig1, eval=TRUE, autodep=TRUE, fig.align='center', out.width='90%'}
+
+knitr::include_graphics(path = "./figs/p_mdi_longitudinal.png")
+
+
+```
+  
+  
+__Figure 1: Longitudinal stability of microbiome disruption indices during long-term acute care.__ Boxplots show the distribution of MDI values at enrollment and over the duration of long-term mechanical ventilation, with median values shown as a thick horizontal bars, interquartile ranges (IQRs) shown as boxes, whiskers extending to 1.5 * IQR, and outliers depicted as points.     
+  
+  
+  
+-----  
+\newpage
+<P style = "page-break-before: always">
+  
+#### Figure 2:  
+  
+  
+```{r fig2, eval=TRUE, autodep=TRUE, fig.align='center', out.width='90%'}
+
+knitr::include_graphics(path = "./figs/p_combined_mdi_crosssection_counterfact.png")
+
+
+```
+  
+  
+__Figure 2: <span style="background-color:lightcyan;">Concurrent</span> probability of VA-LRTI in relation to cross-sectional microbiome disruption indices.__ The results of logistic regression models relating the daily risk of VA-LRTI to MDIs are shown, with the range of observed MDI values on the horizontal axis and the posterior probability of VA-LRTI on the vertical axis. The dark line indicates the posterior median, and the blue shading indicates a range of posterior credible intervals as shown.   
+  
+  
+  
+-----  
+\newpage
+<P style = "page-break-before: always">
+  
+  
+#### Figure 3:  
+  
+  
+```{r fig3, eval=TRUE, autodep=TRUE, fig.align='center', out.width='90%'}
+
+knitr::include_graphics(path = "./figs/p_minimpute_persistent_mdi.png")
+
+
+```
+  
+  
+__Figure 3: Persistent respiratory microbiome disruption predicts VA-LRTI during long-term acute care.__ The odds ratio of VA-LRTI associated with each 1-day increase in the persistence of respiratory bacterial microbiome disruption is shown, with persistent microbiome disruption defined as either low (below median) Shannon diversity, high (above 50%) maximum ASV proportional abundance, or high (above median) total bacterial abundance. The point indicates the posterior median, and the blue shading indicates a range of posterior credible intervals as shown.     
+  
+  
+    
+-----  
+\newpage
+<P style = "page-break-before: always">
+  
+  
+  
+### Supplemental Figures:  
+  
+#### Supplemental Figure 1:  
+  
+  
+```{r sfig1, eval=TRUE, autodep=TRUE, fig.align='center', out.width='90%'}
+
+knitr::include_graphics(path = "./figs/p_minimpute_compare_outcome_definitions_persistence.png")
+
+
+```
+  
+  
+__Supplemental Figure 1: VA-LRTI risk associated with persistent microbiome disruption, depending on definition of VA-LRTI.__ We evaluated the odds ratio of VA-LRTI associated with each 1-day increase in the persistence of respiratory bacterial microbiome disruption and compared the results across three VA-LRTI outcome definitions, for each of the three measured MDIs. The black points, bars, and lines indicate the posterior median, 50%CI, and 95%CI intervals, respectively. The posterior distribution is depicted above the interval with the area supporting increased VA-LRTI risk shaded blue, and the area supporting decreased VA-LRTI risk shaded gray.      
+    
+
+-----  
+\newpage
+<P style = "page-break-before: always">
+  
+  
+  
+### Supplemental Tables:  
+  
+#### Supplemental Table 1:  
+  
+  <span style="background-color:lightcyan;">
+__Supplemental Table 1: Indications for critical care prior to LTACH admission.__ The diagnoses given as an indication for critical care during the hospitalization prior to LTACH admission are summarized, with the number of subjects associated with each diagnosis. </span>    
+  
+  
+
+#### Supplemental Table 2:  
+  
+  <span style="background-color:lightcyan;">
+__Supplemental Table 2: Bacterial genera and species identified by clinical lower respiratory tract culture.__ The bacterial pathogens identified by the clinical respiratory cultures that form the basis for the VA-LRTI definition are summarized with the frequency of their occurrence.    
+  </span>
+  
+  
+  
+  
+-----
+\newpage
+<P style = "page-break-before: always">
+  
+  
+## References  
+  
+<div id="refs"></div>
+  
+  
+
+  
+-----
+\newpage
+<P style = "page-break-before: always">
+
+  
+## R Session Information  
+  
+```{r session_info, eval=TRUE, autodep=TRUE}
+
+sessionInfo()
+
+```
+  
+  
+  
+
+

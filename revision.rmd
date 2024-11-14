@@ -1,0 +1,76 @@
+---
+#title: "Quantifying the Impact of Nasopharyngeal Specimen Quality of SARS-CoV-2 Test Performance"
+#author: "Brendan J. Kelly, MD, MS"
+bibliography: bib/bibliography.bib
+csl: csl/cid.csl
+output: html_document
+css: style_roboto_double.css
+---
+
+
+```{r setup, echo=FALSE, eval=TRUE, include=FALSE, autodep=TRUE}
+
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(tidyverse)
+library(tidybayes)
+
+
+```
+  
+`r format(Sys.Date(), "%d %B %Y")`
+  
+RE: revised research manuscript submission  
+  
+<br>  
+  
+To the editor:  
+  
+Thank you for your review of our manuscript, titled "Respiratory microbiome disruption and risk for ventilator-associated lower respiratory tract infection." We have made substantial revisions to the manuscript and added new analyses in response to the reviewers' helpful comments. We believe the manuscript is significantly improved as a result of these changes. We have attached the new manuscript with changes highlighted, and below we have summarized our responses to the reviewers' comments, including the locations of edits:  
+  
+<br>  
+  
+```{r response_table, echo=FALSE, eval=TRUE, include=TRUE, message=FALSE, warning=FALSE, error=FALSE, autodep=TRUE}
+
+library(tidyverse)
+library(gt)
+
+revision_tab <- read_tsv("./revision/cid_review_response.tsv")
+
+revision_tab %>%
+  gt::gt() %>%
+  gt::fmt_missing(columns = gt::everything(), missing_text = "--") %>%
+  gt::opt_table_lines(extent = "all") -> revision_gt
+
+revision_gt %>%
+  gt::as_rtf() %>%
+  write_lines("./revision/cid_review_response.rtf")
+
+revision_gt %>%
+  gt::as_raw_html() %>%
+  write_lines("./revision/cid_review_response.html")
+
+
+revision_gt
+
+
+```
+  
+<br>
+  
+We believe that the attached manuscript will be of interest to the infectious diseases, clinical microbiology, and epidemiology communities, given the difficulty of diagnosing ventilator-associated lower respiratory tract infection and the potential for microbiome measures to improve diagnosis. All authors have reviewed and approved the attached manuscript, and we report no conflicts of interest. The manuscript is not under consideration at any other journal. Please contact me (brendank@pennmedicine.upenn.edu) in case of any questions.  
+  
+Many thanks for your consideration,  
+  
+  
+<br>  
+    
+    
+Brendan J. Kelly, MD, MS  
+Assistant Professor of Medicine & Epidemiology  
+Division of Infectious Diseases  
+Perelman School of Medicine  
+University of Pennsylvania  
+  
+  
+  
+  

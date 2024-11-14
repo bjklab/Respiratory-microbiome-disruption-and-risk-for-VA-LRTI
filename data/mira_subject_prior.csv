@@ -1,0 +1,84 @@
+subject_id,prior_icu_indication,days_mechan_vent_prior_enroll,days_trach_prior_enroll
+MIRA_001,lung adenocarcinoma and diffuse alveolar hemorrhage,219,205
+MIRA_002,pneumonia,66,52
+MIRA_003,NA,NA,NA
+MIRA_004,esophageal cancer and fistula,32,21
+MIRA_005,ALS,33,31
+MIRA_006,pneumonia,58,44
+MIRA_007,congestive heart failure,113,65
+MIRA_008,esophageal cancer and fistula,106,101
+MIRA_009,NA,NA,NA
+MIRA_010,pneumonia,21,8
+MIRA_011,NA,NA,NA
+MIRA_012,congestive heart failure,18,5
+MIRA_013,esophageal cancer and fistula,60,49
+MIRA_014,subarachnoid hemorrhage,47,34
+MIRA_015,pneumonia,30,12
+MIRA_016,inhalation injury,16,7
+MIRA_017,pulmonary embolism,51,48
+MIRA_018,pneumonia,42,28
+MIRA_019,pneumonia,24,6
+MIRA_020,cardiac arrest,46,27
+MIRA_021,sepsis,23,10
+MIRA_022,NA,NA,NA
+MIRA_023,pneumonia,181,159
+MIRA_024,cardiac arrest,75,59
+MIRA_025,congestive heart failure,57,45
+MIRA_026,pneumonia,26,-4
+MIRA_027,chronic obstructive pulmonary disease,25,18
+MIRA_028,pneumonia,38,25
+MIRA_030,cardiac arrest,32,19
+MIRA_031,pneumonia,32,5
+MIRA_032,pulmonary embolism,21,12
+MIRA_033,pneumonia,27,21
+MIRA_034,pneumonia,58,33
+MIRA_035,pneumonia,33,25
+MIRA_036,pneumonia,54,31
+MIRA_037,pneumonia,520,507
+MIRA_038,pneumonia,23,9
+MIRA_040,sepsis,38,24
+MIRA_041,sepsis,40,17
+MIRA_042,stroke,23,14
+MIRA_043,subarachnoid hemorrhage,56,32
+MIRA_044,trauma,414,398
+MIRA_045,pneumonia,14,5
+MIRA_046,stroke,58,42
+MIRA_047,obesity hypoventilation syndrome,26,6
+MIRA_048,NA,NA,NA
+MIRA_049,sepsis,70,59
+MIRA_050,sepsis,100,96
+MIRA_051,cardiac arrest,18,10
+MIRA_052,pneumonia,27,12
+MIRA_053,NA,NA,NA
+MIRA_054,stroke,22,13
+MIRA_055,oral cancer,53,53
+MIRA_056,pneumonia,66,39
+MIRA_057,sepsis,48,28
+MIRA_058,NA,NA,NA
+MIRA_059,chronic obstructive pulmonary disease,25,10
+MIRA_060,stroke,67,41
+MIRA_061,pneumonia,45,13
+MIRA_062,pneumonia,18,9
+MIRA_063,congestive heart failure,62,28
+MIRA_064,obesity hypoventilation syndrome,1512,1500
+MIRA_065,pneumonia,38,8
+MIRA_066,pneumonia,10,6
+MIRA_068,pneumonia,24,10
+MIRA_069,neuromuscular disorder,39,25
+MIRA_070,cardiac arrest,271,268
+MIRA_071,neuromuscular disorder,23,8
+MIRA_072,trauma,30,17
+MIRA_073,hemoptysis,31,15
+MIRA_075,congestive heart failure,16,11
+MIRA_076,NA,NA,NA
+MIRA_077,congestive heart failure,90,75
+MIRA_078,congestive heart failure,23,15
+MIRA_079,congestive heart failure,79,63
+MIRA_080,NA,NA,NA
+MIRA_081,NA,NA,NA
+MIRA_082,pulmonary fibrosis,43,19
+MIRA_083,trauma,47,38
+MIRA_084,pneumonia,106,92
+MIRA_085,congestive heart failure,36,15
+MIRA_088,cardiac arrest,30,21
+MIRA_089,pneumonia,17,3
